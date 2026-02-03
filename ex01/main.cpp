@@ -1,93 +1,80 @@
+#include <iostream>
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int main()
 {
-    std::cout << "===== VALID CONSTRUCTION =====" << std::endl;
-    {
-        try
-        {
-            Bureaucrat a("Alice", 42);
-            Bureaucrat b("Bob", 1);
-            Bureaucrat c("Charlie", 150);
-
-            std::cout << a << std::endl;
-            std::cout << b << std::endl;
-            std::cout << c << std::endl;
-        }
-        catch(const std::exception &e)
-        {
-            std::cout << "Exception: " << e.what() << std::endl;
-        }
-    }
-
-    std::cout << "\n===== INVALID CONSTRUCTION =====" << std::endl;
-    {
-        try
-        {
-            Bureaucrat d("David", 0);
-        }
-        catch(const std::exception& e)
-        {
-            std::cerr << "Exception: " << e.what() << std::endl;
-        }
-
-        try
-        {
-            Bureaucrat e("Eve", 151);
-        }
-        catch(const std::exception& e)
-        {
-            std::cout << "Exception: " << e.what() << std::endl;
-        }
-    }
-
-    std::cout << "\n===== INCREMENT TEST (PROMOTION) =====" << std::endl;
+    std::cout << "========== CONSTRUCTION TEST ==========" << std::endl;
     try
     {
-        Bureaucrat f("Frank", 2);
-        std::cout << f << std::endl;
-        f.incrementGrade();
-        std::cout << f << std::endl;
-        f.incrementGrade();
-        std::cout << f << std::endl;
+        Form f1("TaxForm", 50, 25);
+        Form f2("SecretForm", 1, 1);
+        Form f3("EasyForm", 150, 150);
+
+        std::cout << f1 << std::endl;
+        std::cout << f2 << std::endl;
+        std::cout << f3 << std::endl;
     }
-    catch(const std::exception& e)
+    catch (std::exception& e)
     {
         std::cout << "Exception: " << e.what() << std::endl;
     }
 
-    std::cout << "\n===== DECREMENT TEST (DEMOTION) =====" << std::endl;
+    std::cout << "\n========== INVALID FORM GRADES ==========" << std::endl;
     try
     {
-        Bureaucrat g("Grace", 149);
-        std::cout << g << std::endl;
-        g.decrementGrade();
-        std::cout << g << std::endl;
-        g.decrementGrade();
-        std::cout << g << std::endl;
+        Form bad1("BadForm1", 0, 10);
     }
-    catch(const std::exception& e)
+    catch (std::exception& e)
     {
         std::cout << "Exception: " << e.what() << std::endl;
     }
 
-    std::cout << "\n===== COPY & ASSIGNMENT TEST =====" << std::endl;
     try
     {
-        Bureaucrat h("Henry", 10);
-        Bureaucrat i(h);
-        Bureaucrat j("Jack", 50);
-
-        j = h;
-
-        std::cout << h << std::endl;
-        std::cout << i << std::endl;
-        std::cout << j << std::endl;
+        Form bad2("BadForm2", 10, 151);
     }
-    catch(const std::exception& e)
+    catch (std::exception& e)
     {
         std::cout << "Exception: " << e.what() << std::endl;
     }
 
+    std::cout << "\n========== SIGNING TEST ==========" << std::endl;
+    Bureaucrat low("LowRank", 100);
+    Bureaucrat mid("MidRank", 50);
+    Bureaucrat high("HighRank", 1);
+
+    Form form("ImportantForm", 50, 10);
+
+    std::cout << form << std::endl;
+
+    low.signForm(form);
+    std::cout << form << std::endl;
+
+    mid.signForm(form);
+    std::cout << form << std::endl;
+
+    high.signForm(form);
+    std::cout << form << std::endl;
+
+    std::cout << "\n========== COPY / ASSIGNMENT ==========" << std::endl;
+    try
+    {
+        Form original("Original", 42, 20);
+        Form copy(original);
+        Form assigned("Assigned", 100, 100);
+
+        assigned = original;
+
+        std::cout << original << std::endl;
+        std::cout << copy << std::endl;
+        std::cout << assigned << std::endl;
+    }
+    catch (std::exception& e)
+    {
+        std::cout << "Exception: " << e.what() << std::endl;
+    }
+
+    std::cout << "\n========== END ==========" << std::endl;
     return 0;
 }
