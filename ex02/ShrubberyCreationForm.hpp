@@ -2,11 +2,20 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 #include <iostream>
+#include "AForm.hpp"
 
-class ShrubberyCreationForm
+class ShrubberyCreationForm : public AForm
 {
     private:
+        const std::string _target;
     public:
+        ShrubberyCreationForm(std::string const & target);
+        ShrubberyCreationForm(const ShrubberyCreationForm& other);
+        ShrubberyCreationForm& operator=(const ShrubberyCreationForm& other);
+        ~ShrubberyCreationForm();
+
+    protected:
+        void executeAction() const;
 };
 
 #endif

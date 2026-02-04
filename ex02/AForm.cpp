@@ -6,7 +6,7 @@ AForm::AForm() : _name("default"), _isSigned(false), _GradeToSign(1), _GradeToEx
     std::cout << "Form default constructor called" << std::endl;
 }
 
-AForm::AForm(const Form& other) 
+AForm::AForm(const AForm& other) 
     : _name(other._name),
       _isSigned(other._isSigned),
       _GradeToSign(other._GradeToSign),
@@ -94,3 +94,12 @@ void AForm::beSigned(const Bureaucrat& bureaucrat)
     else
         _isSigned = true;
 }
+
+// void AForm::execute(Bureaucrat const & executor) const
+// {
+//     if (!getIsSigned())
+//         throw AForm::GradeTooLowException();
+//     if (executor.getGrade() > getGradeToExecute())
+//         throw AForm::GradeTooLowException();
+//     executeAction();
+// }
