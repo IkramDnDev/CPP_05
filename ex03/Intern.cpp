@@ -17,8 +17,6 @@ Intern& Intern::operator=(const Intern& other)
     return *this;
 }
 
-Intern::~Intern() {}
-
 AForm* Intern::makeForm(std::string const& formName,
                         std::string const& target)
 {
@@ -46,3 +44,5 @@ AForm* Intern::makeForm(std::string const& formName,
     std::cout << "Intern couldn’t find form named \"" << formName << "\"" << std::endl;
     return NULL;
 }
+
+Intern::~Intern() {}

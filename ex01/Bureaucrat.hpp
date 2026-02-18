@@ -18,7 +18,7 @@ class Bureaucrat
         ~Bureaucrat();
 
         Bureaucrat(std::string name, int grade);
-        std::string const& getName() const;
+        std::string getName() const;
         int getGrade() const;
         void incrementGrade();
         void decrementGrade();

@@ -30,7 +30,7 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : _name(name)
         _grade = grade;
 }
 
-std::string const& Bureaucrat::getName() const
+std::string Bureaucrat::getName() const
 {
     return (_name);
 }

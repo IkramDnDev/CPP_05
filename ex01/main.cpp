@@ -4,23 +4,19 @@
 
 int main()
 {
-    std::cout << "========== CONSTRUCTION TEST ==========" << std::endl;
+    std::cout << "----------- Valid -----------" << std::endl;
     try
     {
         Form f1("TaxForm", 50, 25);
-        Form f2("SecretForm", 1, 1);
-        Form f3("EasyForm", 150, 150);
 
         std::cout << f1 << std::endl;
-        std::cout << f2 << std::endl;
-        std::cout << f3 << std::endl;
     }
     catch (std::exception& e)
     {
         std::cout << "Exception: " << e.what() << std::endl;
     }
 
-    std::cout << "\n========== INVALID FORM GRADES ==========" << std::endl;
+    std::cout << "\n----------- Invalid -----------" << std::endl;
     try
     {
         Form bad1("BadForm1", 0, 10);
@@ -39,7 +35,7 @@ int main()
         std::cout << "Exception: " << e.what() << std::endl;
     }
 
-    std::cout << "\n========== SIGNING TEST ==========" << std::endl;
+    std::cout << "\n------------------------------" << std::endl;
     Bureaucrat low("LowRank", 100);
     Bureaucrat mid("MidRank", 50);
     Bureaucrat high("HighRank", 1);
@@ -57,7 +53,7 @@ int main()
     high.signForm(form);
     std::cout << form << std::endl;
 
-    std::cout << "\n========== COPY / ASSIGNMENT ==========" << std::endl;
+    std::cout << "\n----------- COPY & ASSIGNMENT -----------" << std::endl;
     try
     {
         Form original("Original", 42, 20);
@@ -74,7 +70,5 @@ int main()
     {
         std::cout << "Exception: " << e.what() << std::endl;
     }
-
-    std::cout << "\n========== END ==========" << std::endl;
     return 0;
 }

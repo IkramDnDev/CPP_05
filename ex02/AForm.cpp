@@ -41,7 +41,7 @@ AForm::~AForm()
     std::cout << "Form destructor called" << std::endl;
 }
 
-std::string const& AForm::getName() const
+std::string AForm::getName() const
 {
     return (_name);
 }
