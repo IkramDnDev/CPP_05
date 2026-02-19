@@ -2,7 +2,7 @@
 #include "AForm.hpp"
 #include <fstream>
 
-ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 137, 145), _target("default") {};
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm", 145, 137), _target("default") {};
 
 ShrubberyCreationForm::ShrubberyCreationForm(std::string const & target)
     : AForm("ShrubberyCreationForm", 145, 137),
