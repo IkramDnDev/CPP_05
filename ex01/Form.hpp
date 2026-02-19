@@ -10,7 +10,7 @@ class Form
     private:
         std::string const _name;
         bool _isSigned;
-        int const _GradeToSign; //Minimum grade needed to sign
+        int const _GradeToSign;
         int const _GradeToExec;
     public:
         Form();
