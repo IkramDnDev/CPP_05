@@ -1,4 +1,4 @@
-#ifndef AFORM_HPP
+      #ifndef AFORM_HPP
 # define AFORM_HPP
 
 #include <iostream>
