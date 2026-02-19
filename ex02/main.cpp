@@ -13,7 +13,7 @@ int main()
         Bureaucrat Ikram("Ikram dahhan", 3);
         std::cout << Ikram << std::endl;
         std::cout << std::endl;
-        std::string target_1 = "Ikram";
+        std::string target_1 = "Robot";
         RobotomyRequestForm R(target_1);
         std::cout << R << std::endl;
         Ikram.signForm(R);
@@ -35,7 +35,7 @@ int main()
         
         std::cout << Ikram << std::endl;
         std::cout << std::endl;
-        std::string target_3 = "Hiba";
+        std::string target_3 = "President";
         PresidentialPardonForm P(target_2);
         std::cout << P << std::endl;
         Ikram.signForm(P);
